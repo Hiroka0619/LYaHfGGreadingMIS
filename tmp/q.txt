@@ -1,0 +1,33 @@
+1.
+GHCiで関数を部分適用すると：
+*Main> multThree 3 5
+<interactive>:7:1:
+No instance for (Show (Int -> Int)) arising from a use of `print'
+Possible fix: add an instance declaration for (Show (Int -> Int))
+In a stmt of an interactive GHCi command: print it
+
+以上のように例外がおきます。
+● なぜだか理由を答えてください。
+? ヒント1: 例外のメッセージをよく見ましょう
+? ヒント2: GHCiで値を表示できる条件とは？
+
+2.
+1~100までの数値でコラッツ数列が15を超える数
+値を列挙してください。
+
+? テキストのp.72?73に思いっきり答え書いてあるのでカ
+ンニングしちゃダメだよ
+? ただしコラッツ数列を求めるプログラムは以下
+chain :: Integer -> [ Integer ]
+chain 1 = [1]
+chain n
+| even n = n : chain (n `div` 2)
+| odd n = n : chain (n * 3 + 1)
+
+? も一つヒント：リストの長さは length 関数で得られます
+
+3.
+組み込み関数elemと同じ動きをするelem'をfold
+（左右は作りやすい方で）で実装してみてください。
+
+
