@@ -1,5 +1,5 @@
-collatzOverFifteen :: [Integer]
-collatzOverFifteen = [ head x | x <- filter isGtFifteen (map chain [1..100]) ]
+collatzOverFifteen :: [Integer] -> [Integer]
+collatzOverFifteen xs = [ head x | x <- filter isGtFifteen (map chain xs) ]
  where isGtFifteen x = length x > 15
 chain :: Integer -> [ Integer ]
 chain 1 = [1]
